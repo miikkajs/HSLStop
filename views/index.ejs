@@ -1,12 +1,15 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="HSLStop">
   <head>
     <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
     <script src="javascripts/script.js"></script>
   </head>
   <body>
-    <div ng-controller="FetchCtrl">
+      <h1>{{name}}</h1> 
+    <input placeholder="Line code" ng-model="line" type="text"/>
+
+    <p>{{line}}</p>
+    <div ng-controller="FetchController">
            <button ng-click="fetch()">fetch</button>
-           {{data.code}}
   </body>
 </html>
