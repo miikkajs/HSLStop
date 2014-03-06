@@ -1,15 +1,38 @@
 <!doctype html>
 <html ng-app="HSLStop">
-  <head>
+<head>
     <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
     <script src="javascripts/script.js"></script>
-  </head>
-  <body>
-      <h1>{{name}}</h1> 
-    <input placeholder="Line code" ng-model="line" type="text"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
-    <p>{{line}}</p>
-    <div ng-controller="FetchController">
-           <button ng-click="fetch()">fetch</button>
-  </body>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<div class="container">
+    <div ng-controller="FetchController" ng-init="fetch()">
+        <h1>{{error}}</h1>
+        <h1>{{data.code}}</h1>
+        <table class="table">
+            <th>Line</th>
+            <th>Time</th>
+            <th>Distance</th>
+            <tr ng-repeat="d in data">
+                <td>{{d.code}}</td>
+                <td>{{d.name}}</td>
+                <td>{{d.dist}}</td>
+            </tr>
+        </table>
+    </div>
+
+</div><!-- /.container -->
+
+
+</body>
 </html>
